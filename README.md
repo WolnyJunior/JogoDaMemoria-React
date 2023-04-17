@@ -3,4 +3,5 @@ Esse Jogo da Memória em React foi uma  atualização feita no curso de dev web 
 Onde ja havia sido criado o jogo, em aulas anteriores.
 
 ## Link do Deploy no Vercel
-https://jogo-da-memoria-react-liart.vercel.app/
+<a href="https://jogo-da-memoria-react-liart.vercel.app/"><img src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white"></a>
+
