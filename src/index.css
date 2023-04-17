@@ -1,11 +1,11 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-image: linear-gradient(to right, #808080, #262626);
+body {
+    background-image: linear-gradient(to left, #f7496b 10%, #009efd 100%);
     font-family: 'Righteous', cursive;
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@ body{
 
 }
 
-.card{
+.card {
     width: 130px;
     height: 130px;
     position: relative;
@@ -22,7 +22,8 @@ body{
     transition: transform .5s;
 }
 
-.card_back, .card_front{
+.card_back,
+.card_front {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -31,43 +32,62 @@ body{
     align-items: center;
     border-radius: 20px;
     box-shadow: 10px 10px 10px #000000;
-    backface-visibility: hidden;/* deixa invisível as faces que tiverem invertidas 180deg */
+    backface-visibility: hidden;
+    /* deixa invisível as faces que tiverem invertidas 180deg */
 }
 
-.flip{
+.flip {
     transform: rotateY(180deg);
 }
 
-.card_front{
+.card_front {
     transform: rotateY(180deg);
     background-color: #101c2c;
 }
 
-.card_back{
-    color: #101c2c;
-    background-color: #05c3ff;
+.card_back {
+    color: white;
+    background: transparent;
+    border: 2px solid #f7496b;
     font-size: 45px;
-    /* display: none; */
-
+    position: relative;
+}
+.card_back::before{
+    content: '';
+    position: absolute;
+    border-radius: 20px;
+    background-color: #f7496b;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s ease;
 }
 
-#gameOver{
+.card_back:hover::before{
+    width: 100%;
+}
+
+#gameOver {
     position: absolute;
     width: 100%;
     height: 100%;
     /* background-color: #ffffffbb; -- fundo cinza transparente*/
-    background-color: rgba(0, 0, 0, 0.9);/* -- fundo preto com trasnparência */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* -- fundo preto com trasnparência */
     color: white;
     font-size: 50px;
     /* display: none; */
     display: flex;
-    justify-content: center;align-items: center;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     top: 0;
     left: 0;
 }
 
-button{
+button {
     padding: 20px;
     font-size: 20px;
     background-color: yellow;
@@ -76,39 +96,41 @@ button{
     margin-top: 20px;
 }
 
-#gameBoard{
+#gameBoard {
     max-width: 700px;
     display: grid;
-    grid-template:  1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr ;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
     gap: 15px;
 }
 
 @media only screen and (max-width: 600px) {
-    body{
+    body {
         background-image: linear-gradient(to left, #2282ff, #37faa9);
-        }
-        
-    .card{
+    }
+
+    .card {
         width: 85px;
         height: 85px;
         position: relative;
         transform-style: preserve-3d;
         transition: transform .5s;
-        }
+    }
 
-    #gameOver{
+    #gameOver {
         position: absolute;
         text-align: center;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);/* -- fundo preto com trasnparência */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* -- fundo preto com trasnparência */
         color: white;
         font-size: 50px;
         display: flex;
         /* display: none; */
-        justify-content: center;align-items: center;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
         top: 0;
         left: 0;
-    }        
+    }
 }
